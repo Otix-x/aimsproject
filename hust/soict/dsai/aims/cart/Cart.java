@@ -1,6 +1,8 @@
     //The Cart class will contain a list of DigitalVideoDisc objects and have methods capable of modifying the list. 
 
-package aimsproject;
+package aimsproject.hust.soict.dsai.aims.cart;
+
+import aimsproject.hust.soict.dsai.aims.disc.DigitalVideoDisc;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;

@@ -1,5 +1,9 @@
 // An Internet Media Store
-package aimsproject;
+package aimsproject.hust.soict.dsai.aims;
+
+import aimsproject.hust.soict.dsai.aims.cart.Cart;
+import aimsproject.hust.soict.dsai.aims.disc.DigitalVideoDisc;
+
 public class AIMS {
     public static void main(String[] args){
         // Create a new Cart
