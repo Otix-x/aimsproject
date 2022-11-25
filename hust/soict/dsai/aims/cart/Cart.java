@@ -14,7 +14,7 @@ public class Cart {
     }
 
     // The method addDigitalVideoDisc(DigitalVideoDisc disc) to add an item to the list
-    void addDigitalVideoDisc(DigitalVideoDisc disc){
+    public void addDigitalVideoDisc(DigitalVideoDisc disc){
         if(qtyOrdered == MAX_NUMBERS_ORDERED){
             System.out.println("ERROR! The cart is full");
             return ;
@@ -29,7 +29,7 @@ public class Cart {
     }
 
     // The method removeDigitalVideoDisc(DigitalVideoDisc disc) to remove the item passed by argument from the list.
-    void removeDigitalVideoDisc(DigitalVideoDisc disc){
+    public void removeDigitalVideoDisc(DigitalVideoDisc disc){
          for(int i = 0; i < qtyOrdered; ++i){
             if(itemsOrdered[i] == disc){
                 itemsOrdered[i] = itemsOrdered[qtyOrdered-1];
