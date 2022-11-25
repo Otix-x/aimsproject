@@ -19,7 +19,13 @@ public class CartTest {
         cart.addDigitalVideoDisc(dvd3);
 
         // Test the print method
-        cart.print();
+        // cart.print();
         // To-do: Test the remove method
+        // cart.removeDigitalVideoDisc(dvd1);
+        // cart.print();
+        // To-do: Test the search method
+        cart.search("Aladdin"); // Search by title
+        
+        cart.search(1); // Search by ID
     }
 }
