@@ -1,6 +1,6 @@
-package aimsproject.hust.soict.dsai.aims.disc;
+package aimsproject.hust.soict.dsai.aims.media;
 
-public class DigitalVideoDisc {
+public class DigitalVideoDisc extends Disc {
     private int id;
     private String title;
     private String category;
@@ -10,14 +10,14 @@ public class DigitalVideoDisc {
     private static int nbDigitalVideoDiscs = 0;
 
     public DigitalVideoDisc(String title) {
-        super();
+        super(title);
         this.title = title;
         nbDigitalVideoDiscs++;
         this.setId(nbDigitalVideoDiscs);
     }
 
     public DigitalVideoDisc(String title, String category, float cost) {
-        super();
+        super(title, category, cost);
         this.title = title;
         this.category = category;
         this.cost = cost;
@@ -26,7 +26,7 @@ public class DigitalVideoDisc {
     }
 
     public DigitalVideoDisc(String title, String category, String director, float cost) {
-        super();
+        super(title, category, cost);
         this.title = title;
         this.category = category;
         this.director = director;
@@ -36,7 +36,7 @@ public class DigitalVideoDisc {
     }
 
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) {
-        super();
+        super(title, category, director, length, cost);
         this.title = title;
         this.category = category;
         this.director = director;
@@ -46,25 +46,6 @@ public class DigitalVideoDisc {
         this.setId(nbDigitalVideoDiscs);
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getCategory() {
-        return category;
-    }
 
     public String getDirector() {
         return director;
@@ -74,9 +55,6 @@ public class DigitalVideoDisc {
         return length;
     }
     
-    public float getCost() {
-        return cost;
-    }
 
     public void toString(DigitalVideoDisc dvd) {
         System.out.println("DVD - " + dvd.getTitle() + " - " + dvd.getCategory() + " - " + dvd.getDirector() + " - " + dvd.getLength() + " : " + dvd.getCost());

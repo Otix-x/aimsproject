@@ -2,7 +2,7 @@
 
 package aimsproject.hust.soict.dsai.aims.cart;
 
-import aimsproject.hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import aimsproject.hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;

@@ -1,6 +1,6 @@
 package aimsproject.hust.soict.dsai.aims.store;
 
-import aimsproject.hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import aimsproject.hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 public class Store {
     // itemsInStore is a static array of DigitalVideoDisc
