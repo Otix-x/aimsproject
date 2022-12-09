@@ -1,14 +1,10 @@
 package aimsproject.hust.soict.dsai.aims.media;
-import java.lang.Object;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Book extends Media {
     
-    private int id;
-    private String title;
-    private String category;
-    private float cost;
     private List<String> authors = new ArrayList<String>();
 
     public Book() {
@@ -16,34 +12,25 @@ public class Book extends Media {
     }
 
     public Book(String title) {
-        super();
-        this.title = title;
-        
+        super(title);
     }
 
     public Book(String title, String category, float cost) {
-        super();
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
-        
+        super(title,category,cost);        
     }
 
     public Book(String title, String category, float cost, List<String> authors) {
-        super();
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
+        super(title,category,cost);
         this.authors = authors;
     }
 
     public Book(int id, String title, String category, float cost, List<String> authors) {
-        super();
-        this.id = id;
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
+        super(id,title,category,cost);
         this.authors = authors;
+    }
+
+    public Book(int id, String title, String category, float cost) {
+        super(id,title,category,cost);
     }
 
     public List<String> getAuthors() {
@@ -73,4 +60,9 @@ public class Book extends Media {
         }
         System.out.println("Author not found");
     }
+
+    @Override
+	public String toString() {
+		return "Book - " + this.getId() + " - " + this.getTitle() + " - " + this.getCategory() + " - " + "[" + this.getAuthors() + "]" + " - " + this.getCost() + "$" ;
+	}
 }
