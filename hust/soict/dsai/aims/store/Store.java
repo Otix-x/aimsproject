@@ -1,36 +1,45 @@
 package aimsproject.hust.soict.dsai.aims.store;
 
-import aimsproject.hust.soict.dsai.aims.media.DigitalVideoDisc;
+import java.util.ArrayList;
 
+import aimsproject.hust.soict.dsai.aims.media.Media;
 public class Store {
     // itemsInStore is a static array of DigitalVideoDisc
-    private static DigitalVideoDisc itemsInStore[] = new DigitalVideoDisc[100];
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>();
     // addDVD methods
-    public static void addDVD(DigitalVideoDisc disc){
-        for(int i = 0; i < itemsInStore.length; ++i){
-            if(itemsInStore[i] == null){
-                itemsInStore[i] = disc;
-                return;
-            }
+    public void addMedia(Media disc){
+        itemsInStore.add(disc);
+    }
+
+    public void addMedia(Media[] dvdList){
+        for(int i = 0; i < dvdList.length; ++i){
+            itemsInStore.add(dvdList[i]);
         }
     }
 
-    // removeDVD methods
-    public static void removeDVD(DigitalVideoDisc disc){
-        for(int i = 0; i < itemsInStore.length; ++i){
-            if(itemsInStore[i] == disc){
-                itemsInStore[i] = itemsInStore[itemsInStore.length-1];
-                return;
+    public void removeMedia(Media disc){
+        itemsInStore.remove(disc);
+    }
+
+    public void removeMedia(int id){
+        for(int i = 0; i < itemsInStore.size(); ++i){
+            if(itemsInStore.get(i).getId() == id){
+                itemsInStore.remove(i);
+                break;
             }
         }
     }
 
     public void print(){
-        for(int i = 0; i < itemsInStore.length; ++i){
-            if(itemsInStore[i] != null){
-                System.out.println(itemsInStore[i].getTitle()+" - "+itemsInStore[i].getCategory()+" - "+itemsInStore[i].getDirector()+" - "+itemsInStore[i].getLength()+" - "+itemsInStore[i].getCost());
+        for(int i = 0; i < itemsInStore.size(); ++i){
+            if(itemsInStore.get(i) != null){
+                System.out.println(itemsInStore.get(i).getTitle()+" - "+itemsInStore.get(i).getCategory()+" - "+itemsInStore.get(i).getCost());
             }
         }
+    }
+
+    public ArrayList<Media> getItemsInStore() {
+        return itemsInStore;
     }
     
 }
