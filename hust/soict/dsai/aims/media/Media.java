@@ -1,23 +1,35 @@
 package aimsproject.hust.soict.dsai.aims.media;
 
-public class Media {
+import java.util.Comparator;
+
+public abstract class Media {
     private int id;
     private String title;
     private String category;
     private float cost;
 
+    public static final Comparator<Media> COMPARE_BY_COST_TITLE = new MediaComparatorByCostTitle();
+        
+    public static final Comparator<Media> COMPARE_BY_TITLE_COST = new MediaComparatorByTitleCost();
+   
     public Media() {
         super();
     }
 
-    public Media(String title) {
+    public  Media(String title) {
         super();
-        this.title = title;
-        
+        this.title = title;       
     }
 
     public Media(String title, String category) {
         super();
+        this.title = title;
+        this.category = category;
+    }
+
+    public Media(int id, String title, String category) {
+        super();
+        this.id = id;
         this.title = title;
         this.category = category;
     }
@@ -29,6 +41,14 @@ public class Media {
         this.cost = cost;
     }
 
+    public Media(int id, String title, String category, float cost) {
+        super();
+        this.id = id;
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+    }
+    
     public int getId() {
         return id;
     }
@@ -60,4 +80,8 @@ public class Media {
     public void setCost(float cost) {
         this.cost = cost;
     }
+
+    public abstract String toString();
+
+
 }
